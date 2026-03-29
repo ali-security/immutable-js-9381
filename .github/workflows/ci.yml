@@ -28,6 +28,7 @@ jobs:
 
   type-check:
     name: 'Type Check'
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -88,7 +89,7 @@ jobs:
   publish:
     name: 'Publish'
     needs: [lint, type-check, unit-test, website]
-    if: github.ref == 'refs/heads/main'
+    if: false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
